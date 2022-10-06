@@ -12,14 +12,18 @@ import dimod
 import json
 from dwave.system import DWaveSampler, EmbeddingComposite
 
+# def sat1(x):
+#  return not x[0] and not x[1] and not x[2] and not x[3] and not x[4] and x[5] and not x[6] and x[7] and x[8] and not x[9] and x[10] and x[11] and x[12] and x[13] and x[14] and not x[15]
+
 def sat1(x):
-  return not x[0] and not x[1] and not x[2] and not x[3] and not x[4] and x[5] and not x[6] and x[7] and x[8] and not x[9] and x[10] and x[11] and x[12] and x[13] and x[14] and not x[15]
+  return not x[0] and not x[1] and not x[2] and not x[3] and not x[4] and x[5] and not x[6] and x[7] and x[8] and not x[9] and x[10] and x[11] and x[12] and x[13] and x[14] and not x[15] and not x[16] and not x[17] 
 
 def convert_to_minus(x):
   # 0 -> 1, 1 -> -1
   return (1 - 2*numpy.multiply(x, 1))
 
-N=16
+# N=16
+N = 18
 
 def getEquations(*x):
   a = numpy.zeros(N*(N+1)+2)
